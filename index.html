@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang='pt-br'>
+<head>
+  <meta charset='utf-8'/>
+  <meta name='viewport' content='width=device-width,initial-scale=1'/>
+  <title>Colégio Anglo São Roque · Pensamento Computacional – EF II</title>
+  <meta name='description' content='Pensamento Computacional (EF II) – BNCC Computação – Colégio Anglo São Roque – Introdução e plano por ano.' />
+  <style>
+    :root{--blue:#0b3d91;--blue-acc:#2f66c7;--accent:#e64a19;--ink:#1d1d1f;--muted:#4a4a4a;--bg:#f7f9fc;--card:#ffffff;--radius:14px;--shadow:0 8px 24px rgba(0,0,0,.08)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+    header{background:linear-gradient(135deg,var(--blue),var(--blue-acc));color:#fff;padding:22px 18px 0 18px}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 12px}
+    .brand{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+    .brand-logo img{width:72px;height:72px;border-radius:12px;border:2px solid #ffffff33;display:block;object-fit:cover;background:#fff}
+    .brand h1{margin:0;font-size:24px}
+    .brand p{margin:.25rem 0 0 0;opacity:.95}
+    .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;opacity:.95;padding-bottom:10px}
+    .chip{background:#ffffff22;border:1px solid #ffffff44;color:#fff;padding:6px 10px;border-radius:999px;font-size:13px;text-decoration:none}
+    .topbar{position:sticky;top:0;z-index:999;background:linear-gradient(135deg,var(--blue),var(--blue-acc));padding:10px 0;border-top:1px solid #ffffff22;border-bottom:1px solid #ffffff33;backdrop-filter:saturate(160%) blur(6px)}
+    nav.top{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .navbtn{appearance:none;border:none;background:#ffffff22;color:#fff;padding:8px 12px;border-radius:10px;font-weight:600;cursor:pointer;text-decoration:none;border:1px solid #ffffff44;transition: background-color .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease}
+    .navbtn:hover{background:#ffffff33}
+    .navbtn.active{background:#fff;color:var(--blue-acc);border-color:#d7e4ff;box-shadow:0 0 0 2px #ffffff33 inset}
+    .years{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+    .years .navbtn{padding:6px 10px;font-size:13px}
+    .years .navbtn.active{background:#fff;color:var(--blue);border-color:#cfe0ff;box-shadow:0 0 0 2px #e9f1ff inset}
+    .navbtn[data-target='anos'].active{background:#eef4ff;color:var(--blue-acc);border-color:#d7e4ff}
+    #intro,#anos,#bncc-ref,#ano6,#ano7,#ano8,#ano9{scroll-margin-top:90px}
+    .intro,.cards{max-width:1100px;margin:16px auto;padding:0 12px}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 18px;margin-bottom:16px}
+    .card h2{margin:0 0 8px 0;font-size:20px;color:var(--blue)}
+    .pill{display:inline-block;background:#eef4ff;color:var(--blue);border:1px solid #d7e4ff;padding:4px 8px;border-radius:999px;font-size:12px;margin-right:6px}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:1100px;margin:0 auto 40px auto;padding:0 12px}
+    details{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    summary{list-style:none;cursor:pointer;padding:16px 18px;background:#fff;font-weight:600;color:var(--blue);display:flex;align-items:center;gap:10px}
+    summary::before{content:'';width:8px;height:24px;background:var(--accent);border-radius:2px}
+    details[open] summary{border-bottom:1px solid #eef1f6}
+    .pane{padding:12px 18px 18px 18px;opacity:0;transform:translateY(6px);transition:opacity .24s ease, transform .24s ease}
+    details[open] .pane{opacity:1;transform:translateY(0)}
+    .pane.closing{opacity:0;transform:translateY(6px)}
+    footer.foot{max-width:1100px;margin:18px auto 28px auto;padding:0 12px;color:var(--muted);font-size:14px;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .foot strong{color:var(--blue)}
+    .qr{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:8px 10px;box-shadow:0 4px 12px rgba(0,0,0,.05)}
+    .qr img{width:84px;height:84px;display:block}
+    .qr small{display:block;color:#667085}
+    .totop{position:fixed;right:22px;bottom:22px;z-index:1000;width:44px;height:44px;border-radius:50%;border:none;cursor:pointer;background:#2f66c7;color:#fff;font-size:20px;box-shadow:0 8px 20px rgba(0,0,0,.18);opacity:0;transform:translateY(12px) scale(.9);pointer-events:none;transition:opacity .25s ease, transform .25s ease, background-color .25s ease}
+    .totop:hover{background:#2354a8}
+    .totop.show{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+    .ul{padding-left:18px}
+    @media print{.topbar,.intro .actions{display:none}body{background:#fff}details{page-break-inside:avoid;border:1px solid #e5e7eb;box-shadow:none}details+details{margin-top:12px}summary{background:#f8fafc;border-bottom:1px solid #e5e7eb}footer.foot{border-top:1px solid #e5e7eb;padding-top:8px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class='wrap'>
+    <div class='brand'>
+      <div class='brand-logo'>
+        <img src='data:image/png;base64,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' alt='Logotipo do Colégio Anglo São Roque'>
+      </div>
+      <div>
+        <h1>Colégio Anglo São Roque</h1>
+        <p>Disciplina: <strong>Pensamento Computacional – Ensino Fundamental II</strong><br><span style='opacity:.9'>(Componente da área de <strong>Computação</strong> – BNCC)</span></p>
+      </div>
+    </div>
+    <div class='meta'>
+      <a class='chip' href='https://pedrogalvaojunior.com.br' target='_blank' rel='noopener'>Professor: <strong>Pedro Antonio Galvão Junior</strong></a>
+      <a class='chip' href='https://mindmakers.cc' target='_blank' rel='noopener'>Plataforma: <strong>🔷 MindMakers</strong></a>
+      <span class='chip'>Ano letivo: <strong>2026</strong></span>
+      <span class='chip'>BNCC Computação • MEC/CNE</span>
+    </div>
+  </div>
+</header>
+<div class='topbar'>
+  <div class='wrap'>
+    <nav class='top' aria-label='Menu principal' id='topnav'>
+      <a class='navbtn' href='#intro' data-target='intro'>Introdução</a>
+      <a class='navbtn' href='#anos' data-target='anos'>Anos</a>
+      <a class='navbtn' href='#bncc-ref' data-target='bncc-ref'>BNCC</a>
+      <a class='navbtn' href='https://instagram.com/AngloSR' target='_blank' rel='noopener'>Instagram</a>
+      <a class='navbtn' href='#' onclick='window.print();return false;'>Imprimir</a>
+      <div class='years' aria-label='Ir para série específica'>
+        <a class='navbtn' href='#ano6' data-target='ano6'>6º</a>
+        <a class='navbtn' href='#ano7' data-target='ano7'>7º</a>
+        <a class='navbtn' href='#ano8' data-target='ano8'>8º</a>
+        <a class='navbtn' href='#ano9' data-target='ano9'>9º</a>
+      </div>
+    </nav>
+  </div>
+</div>
+<section class='intro' id='intro'>
+  <div class='card'>
+    <h2>Sobre a disciplina</h2>
+    <p>O componente <strong>Pensamento Computacional</strong> no Ensino Fundamental II aprofunda as habilidades iniciadas no EF I e articula os três eixos da área de Computação na BNCC: <span class='pill'>Pensamento Computacional</span> <span class='pill'>Cultura Digital</span> <span class='pill'>Mundo Digital</span>. Todo o conteúdo está alinhado ao <strong>Complemento da BNCC – Computação (MEC/CNE)</strong>, com competências e habilidades definidas para a Educação Básica.</p>
+    <p>A disciplina é <strong>semanal</strong>, com aulas de <strong>50 minutos</strong> por turma. O foco é desenvolver <strong>resolução de problemas</strong>, <strong>raciocínio lógico</strong>, <strong>programação por blocos e textual (JavaScript)</strong>, <strong>análise de dados</strong>, <strong>projeto e prototipação</strong>, além de <strong>cidadania e segurança digital</strong>.</p>
+    <p><strong>Plataformas e ferramentas</strong> que podem ser utilizadas ao longo do EF II:</p>
+    <ul class='ul'>
+      <li><strong>🔷 MindMakers</strong> (trilhas e desafios oficiais da escola).</li>
+      <li><strong>Scratch</strong> (programação por blocos) e <strong>Code.org / App Lab</strong>.</li>
+      <li><strong>JavaScript</strong> introdutório (quando pertinente e conforme maturidade).</li>
+      <li><strong>HTML/CSS</strong> para interfaces simples (8º–9º).</li>
+      <li><strong>Micro:bit/robótica educacional</strong></li>
+    <li><strong>🧩 <a href='https://makeymakey.com' target='_blank'>Makey Makey</a></strong> para experimentação física.</li>
+      <li><strong>📊 <a href='https://neal.fun' target='_blank'>📊 NealFun</a></strong> (experimentos digitais).</li>
+      <li><strong>✏️ <a href='https://quickdraw.withgoogle.com' target='_blank'>✏️ QuickDraw</a></strong> (IA e reconhecimento de padrões).</li>
+      <li><strong>🤖 <a href='https://sphero.com/pages/edu' target='_blank'>SpheroEdu</a></strong> (robótica e movimento).</li>
+    </ul>
+  </div>
+</section>
+<main class='grid' id='anos'>
+  <details id='ano6' open>
+    <summary>6º Ano – Pensamento Computacional</summary>
+    <div class='pane'>
+      <div class='section'>
+        <h3>🎯 Objetivo</h3>
+        <p>Consolidar conceitos fundamentais de lógica e algoritmos; criar projetos iniciais com programação por blocos e representação de dados simples.</p>
+      </div>
+      <div class='section'>
+        <h3>👨🏽‍🏫 Meu papel como professor</h3>
+        <ul class='ul'>
+          <li>Revisar conceitos de EF I e nivelar a turma.</li>
+          <li>Guiar a construção de <em>algoritmos</em> e <em>fluxogramas</em> básicos.</li>
+          <li>Introduzir variáveis, condicionais e laços em blocos.</li>
+        </ul>
+      </div>
+      <div class='section'>
+        <h3>📘 Apostila e plataforma</h3>
+        <ul class='ul'>
+          <li>Apostila distribuída ao longo das aulas, acompanhando os tópicos.</li>
+          <li>Uso do MindMakers (mindmakers.cc) para práticas e desafios guiados.</li>
+        </ul>
+      </div>
+      <div class='section'>
+        <h3>🛠️ Como trabalhamos</h3>
+        <ul class='ul'>
+          <li>Sequências, decomposição e padrões em problemas do cotidiano.</li>
+          <li>Projetos com blocos: animações e jogos simples.</li>
+          <li>Leitura e criação de <em>gráficos</em> a partir de dados coletados.</li>
+        </ul>
+      </div>
+      <div class='section'>
+        <h3>🏁 BNCC – Competências e habilidades</h3>
+        <ul class='ul'>
+          <li>Representar e implementar algoritmos simples.</li>
+          <li>Usar estruturas básicas (sequência, seleção e repetição) em projetos.</li>
+          <li>Compreender práticas seguras de uso da tecnologia e cidadania digital.</li>
+        </ul>
+      </div>
+      <div class='section'>
+        <h3>🧪 Exemplos de projetos</h3>
+        <ul class='ul'>
+          <li>Jogo de labirinto com pontuação e níveis.</li>
+          <li>História interativa com decisões (condicionais).</li>
+          <li>Coleta de dados da turma (formulário) e gráfico simples.</li>
+        </ul>
+      </div>
+      <div class='section'>
+        <h3>📈 Desenvolvimento esperado</h3>
+        <ul class='ul'>
+          <li>Autonomia crescente na criação com blocos.</li>
+          <li>Organização do pensamento e comunicação de soluções.</li>
+          <li>Postura ética e colaborativa em ambientes digitais.</li>
+        </ul>
+      </div>
+    </div>
+  </details>
+  <details id='ano7'>
+    <summary>7º Ano – Pensamento Computacional</summary>
+    <div class='pane'>
+      <div class='section'>
+        <h3>🎯 Objetivo</h3>
+        <p>Ampliar a complexidade dos projetos com blocos, introduzindo modularização, depuração e noções iniciais de programação textual.</p>
+      </div>
+      <div class='section'>
+        <h3>👨🏽‍🏫 Meu papel como professor</h3>
+        <ul class='ul'>
+          <li>Apresentar <strong>procedimentos/blocos personalizados</strong>.</li>
+          <li>Ensinar estratégias de <strong>teste e depuração</strong>.</li>
+          <li>Contextualizar problemas com dados e tomada de decisão.</li>
+        </ul>
+      </div>
+      <div class='section'>
+        <h3>📘 Apostila e plataforma</h3>
+        <ul class='ul'>
+          <li>Apostila articulada com os projetos práticos.</li>
+          <li>MindMakers para trilhas de código e desafios.</li>
+        </ul>
+      </div>
+      <div class='section'>
+        <h3>🛠️ Como trabalhamos</h3>
+        <ul class='ul'>
+          <li>Projetos com múltiplas cenas, eventos e colisões.</li>
+          <li>Uso de <strong>variáveis e listas</strong> para armazenar informação.</li>
+          <li>Introdução a <strong>JavaScript</strong> (noções de sintaxe, I/O simples).</li>
+        </ul>
+      </div>
+      <div class='section'>
+        <h3>🏁 BNCC – Competências e habilidades</h3>
+        <ul class='ul'>
+          <li>Abstrair, decompor e modelar soluções com dados.</li>
+          <li>Construir e testar algoritmos em blocos e textual (introdução).</li>
+          <li>Comunicar resultados com clareza e referências éticas.</li>
+        </ul>
+      </div>
+      <div class='section'>
+        <h3>🧪 Exemplos de projetos</h3>
+        <ul class='ul'>
+          <li>Jogo de plataforma com vidas, fases e placar (listas/variáveis).</li>
+          <li>Simulador de decisões (if/else) com coleta de dados do usuário.</li>
+          <li>Calculadora simples no App Lab / JS (entrada, processamento e saída).</li>
+        </ul>
+      </div>
+      <div class='section'>
+        <h3>📈 Desenvolvimento esperado</h3>
+        <ul class='ul'>
+          <li>Raciocínio lógico e perseverança frente a erros.</li>
+          <li>Colaboração e documentação básica dos projetos.</li>
+          <li>Letramento de dados inicial (tabelas e gráficos).</li>
+        </ul>
+      </div>
+    </div>
+  </details>
+  <details id='ano8'>
+    <summary>8º Ano – Pensamento Computacional</summary>
+    <div class='pane'>
+      <div class='section'>
+        <h3>🎯 Objetivo</h3>
+        <p>Desenvolver projetos intermediários com foco em resolução de problemas reais, integração de dados e noções de web/IoT conforme recursos.</p>
+      </div>
+      <div class='section'>
+        <h3>👨🏽‍🏫 Meu papel como professor</h3>
+        <ul class='ul'>
+          <li>Orientar ciclos de <em>planejar–criar–testar–revisar</em>.</li>
+          <li>Introduzir <strong>estruturas de dados</strong> simples (listas, dicionários).</li>
+          <li>Tratar de <strong>segurança, privacidade</strong> e <strong>IA responsável</strong>.</li>
+        </ul>
+      </div>
+      <div class='section'>
+        <h3>📘 Apostila e plataforma</h3>
+        <ul class='ul'>
+          <li>Sequências didáticas com estudos de caso e projetos guiados.</li>
+          <li>MindMakers para simulações e desafios práticos.</li>
+        </ul>
+      </div>
+      <div class='section'>
+        <h3>🛠️ Como trabalhamos</h3>
+        <ul class='ul'>
+          <li>Projetos com <strong>dados</strong> (coleta, limpeza básica e visualização).</li>
+          <li>Prototipação de <strong>interfaces</strong> (ex.: páginas simples com HTML/CSS) quando aplicável.</li>
+          <li>Exploração de sensores/robótica educacional se disponível.</li>
+        </ul>
+      </div>
+      <div class='section'>
+        <h3>🏁 BNCC – Competências e habilidades</h3>
+        <ul class='ul'>
+          <li>Aplicar algoritmos e estruturas em problemas contextualizados.</li>
+          <li>Interpretar e comunicar informações com visualizações adequadas.</li>
+          <li>Adotar práticas de segurança, ética e respeito autoral.</li>
+        </ul>
+      </div>
+      <div class='section'>
+        <h3>🧪 Exemplos de projetos</h3>
+        <ul class='ul'>
+          <li>Dashboard simples (gráficos) sobre um tema da comunidade escolar.</li>
+          <li>Site de 1 página (HTML/CSS) com formulário simulado.</li>
+          <li>Projeto com sensores (ex.: Micro:bit) para medir/registrar dados.</li>
+        </ul>
+      </div>
+      <div class='section'>
+        <h3>📈 Desenvolvimento esperado</h3>
+        <ul class='ul'>
+          <li>Autonomia para investigar e propor soluções.</li>
+          <li>Trabalho em equipe e gestão de tarefas.</li>
+          <li>Capacidade de argumentar com base em dados.</li>
+        </ul>
+      </div>
+    </div>
+  </details>
+  <details id='ano9'>
+    <summary>9º Ano – Pensamento Computacional</summary>
+    <div class='pane'>
+      <div class='section'>
+        <h3>🎯 Objetivo</h3>
+        <p>Consolidar o repertório computacional com projetos autorais: jogos, apps ou soluções de dados; preparar a transição para o Ensino Médio.</p>
+      </div>
+      <div class='section'>
+        <h3>👨🏽‍🏫 Meu papel como professor</h3>
+        <ul class='ul'>
+          <li>Mentorar projetos autorais (escopo, requisitos, protótipos e apresentação).</li>
+          <li>Promover <strong>boas práticas</strong>: versionamento simples, organização e referências.</li>
+          <li>Relacionar Computação a outras áreas (STEAM) e problemas da comunidade.</li>
+        </ul>
+      </div>
+      <div class='section'>
+        <h3>📘 Apostila e plataforma</h3>
+        <ul class='ul'>
+          <li>Apostila de apoio e roteiros de projeto.</li>
+          <li>MindMakers para trilhas avançadas (blocos e textual).</li>
+        </ul>
+      </div>
+      <div class='section'>
+        <h3>🛠️ Como trabalhamos</h3>
+        <ul class='ul'>
+          <li>Projetos com <strong>blocos</strong> e/ou <strong>JavaScript</strong> – escolha orientada.</li>
+          <li>Modelagem de dados, <strong>algoritmos</strong> e testes.</li>
+          <li>Apresentação pública com <strong>pitch</strong>, relatório e demonstração.</li>
+        </ul>
+      </div>
+      <div class='section'>
+        <h3>🏁 BNCC – Competências e habilidades</h3>
+        <ul class='ul'>
+          <li>Planejar, implementar e avaliar soluções digitais.</li>
+          <li>Dominar conceitos de lógica, estrutura e representação da informação.</li>
+          <li>Agir com responsabilidade, ética e segurança no ambiente digital.</li>
+        </ul>
+      </div>
+      <div class='section'>
+        <h3>🧪 Exemplos de projetos</h3>
+        <ul class='ul'>
+          <li>Jogo autoral (game design, níveis, sprites, física básica).</li>
+          <li>Mini‑app web com formulário e validação (HTML/CSS/JS).</li>
+          <li>Análise de dados (coleta, gráficos, conclusão) com apresentação/pitch.</li>
+        </ul>
+      </div>
+      <div class='section'>
+        <h3>📈 Desenvolvimento esperado</h3>
+        <ul class='ul'>
+          <li>Autonomia criativa e pensamento crítico.</li>
+          <li>Capacidade de documentação e comunicação técnica.</li>
+          <li>Preparação para trilhas de Computação no Ensino Médio.</li>
+        </ul>
+      </div>
+    </div>
+  </details>
+</main>
+<footer class='foot' id='bncc-ref'>
+  <a class='qr' href='https://instagram.com/AngloSR' target='_blank' rel='noopener' aria-label='Abrir o Instagram da escola'>
+    <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAIAAAAG+WgKAAAD90lEQVR4nO3d3W0UMRhAUUA8UhMlUQwlURPvoQBLaGRd/0x0znOyu8leWfrkmfHXj4+PL9D5dvoD8NlIipikiEmKmKSISYqYpIhJipikiEmKmKSIfX/yQz9+/l79Of7j759fE7/15DOPrzz3l869zrq/a50nn9kqRUxSxCRFTFLEJEXs0cQ3mptWnngy0Yw/M36edVPY2ZlrdPa7GFmliEmKmKSISYqYpIhNTnyjandsnScz4LqfGd22D1h9F1YpYpIiJilikiImKWLZxHfWuunpyXtVM+DnYJUiJilikiImKWKSIvbKiW/nbl1l50x6llWKmKSISYqYpIhJilg28b1xWrntOS3VzuDZ78IqRUxSxCRFTFLEJEVscuI7+/SSnfffrZsK111lepZVipikiEmKmKSISYrY1zeewF5NT7ddafk57v6zShGTFDFJEZMUMUkRezTx7ZxEqn23nTto63b0zp4oMfeZrVLEJEVMUsQkRUxSxCb3+HZOENVVi7edvDC67ax5Ex9XkBQxSRGTFDFJEcv2+HZORqOz+4CVs+cDVqxSxCRFTFLEJEVMUsQmJ745b5xfbtutm3v3nf9DqxQxSRGTFDFJEZMUsclnda577mU19dx2reMb78ibmxOtUsQkRUxSxCRFTFLEsmd1rtufmrPuzIKdV6tWqs9s4uMASRGTFDFJEZMUsYVPbjn7HJKdp+89sW7muu3pplYpYpIiJilikiImKWILr+qcmzLmJqP7T1d/4wkXrurkCpIiJilikiImKWKPJr6dZ9KdfU7L3CS7br578lu33f1nlSImKWKSIiYpYpIiNrnHN5qbKXbu1q2benZeL7puX9J9fFxKUsQkRUxSxCRFLJv41j1xZd0O2rqpZ87Z605Hc+9ulSImKWKSIiYpYpIitvA+vrnXGa2bVuZeZ93TXW47UcJVnVxBUsQkRUxSxCRFbPIE9p1PuRyte/ezzxddZ+eEbpUiJilikiImKWKSIpadx7fTuqs6RzufNnPb3zXHKkVMUsQkRUxSxCRFbHKPb6ezV36edfbUiTlWKWKSIiYpYpIiJili2X18lZ13ye08Ne/sdac7dyqtUsQkRUxSxCRFTFLEDp/OcP8p5E9eeXTbnPjkv2GPj0tJipikiEmKmKSIZRPfWTuf3rnubLt1s+TOcyisUsQkRUxSxCRFTFLEPsnEd/bZKdXVodUseZZVipikiEmKmKSISYrYdSew3//u1RWS66bCOdXcapUiJilikiImKWKSIjY58Z3daap29Hb+VnWfY/X8GVd18hqSIiYpYpIiJilirzyPj5tZpYhJipikiEmKmKSISYqYpIhJipikiEmKmKSI/QP1lDANSdoFrwAAAABJRU5ErkJggg==' alt='QR Code para redes sociais'>
+    <div>
+      <strong>Siga o Anglo São Roque nas redes sociais</strong>
+    </div>
+  </a>
+</footer>
+<button id='toTop' class='totop' aria-label='Voltar ao topo' title='Voltar ao topo'>↑</button>
+<script>
+(function(){
+  const nav=document.getElementById('topnav'); if(!nav) return;
+  const links=Array.from(nav.querySelectorAll("a.navbtn[data-target]"));
+  const linkByTarget=Object.fromEntries(links.map(a=>[a.dataset.target,a]));
+  const sections=links.map(a=>document.getElementById(a.dataset.target)).filter(Boolean);
+  const topbar=document.querySelector('.topbar');
+  function setActive(id){
+    links.forEach(a=>{const on=a.dataset.target===id; a.classList.toggle('active',on); if(on){a.setAttribute('aria-current','true');}else{a.removeAttribute('aria-current');}});
+    if(/^ano[6-9]$/.test(id)&&linkByTarget['anos']){linkByTarget['anos'].classList.add('active');}
+    else if(linkByTarget['anos']){linkByTarget['anos'].classList.remove('active');}
+  }
+  const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){setActive(e.target.id);}});},{root:null,rootMargin:'-45% 0px -45% 0px',threshold:0.01});
+  sections.forEach(sec=>observer.observe(sec));
+  links.forEach(a=>a.addEventListener('click',(ev)=>{const id=a.dataset.target;const target=document.getElementById(id);if(!target) return;ev.preventDefault();const barH=(topbar&&topbar.offsetHeight)?topbar.offsetHeight:0;const gap=8;const y=target.getBoundingClientRect().top+window.pageYOffset-(barH+gap);window.scrollTo({top:y,behavior:'smooth'});history.pushState(null,'','#'+id);setTimeout(()=>setActive(id),350);}));
+  const toTop=document.getElementById('toTop');
+  if(toTop){
+    const onScroll=()=>{const y=window.scrollY||document.documentElement.scrollTop; if(y>260){toTop.classList.add('show');} else {toTop.classList.remove('show');}};
+    window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+    toTop.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
+  }
+  document.querySelectorAll('details').forEach(det=>{const sum=det.querySelector('summary');const pane=det.querySelector('.pane'); if(!sum||!pane) return; sum.addEventListener('click',(e)=>{if(det.open){e.preventDefault();pane.classList.add('closing');setTimeout(()=>{det.open=false;pane.classList.remove('closing');},220);}});});
+})();
+</script>
+</body>
+</html>
